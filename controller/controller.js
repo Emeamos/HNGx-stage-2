@@ -34,6 +34,14 @@ export const UpdatePerson = async (req, res) => {
     }
 }
 
-
-  
-  
+export const DeletePerson = async (req, res) => {
+    try {
+      const person = await Person.findByIdAndDelete(req.params.id);
+      if (!person) {
+        return res.status(404).json({ error: 'Person not found' });
+      }
+      res.json({ message: 'Person deleted successfully' });
+    } catch (error) {
+      res.status(500).json({ error: 'Internal server error' });
+    }
+}
