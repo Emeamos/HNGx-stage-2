@@ -22,6 +22,18 @@ export const GetPerson = async (req, res) => {
     }
 }
 
+export const UpdatePerson = async (req, res) => {
+    try {
+      const person = await Person.findByIdAndUpdate(req.params.id, req.body, { new: true });
+      if (!person) {
+        return res.status(404).json({ error: 'Person not found' });
+      }
+      res.json(person);
+    } catch (error) {
+      res.status(500).json({ error: 'Internal server error' });
+    }
+}
+
 
   
   
