@@ -15,7 +15,7 @@ To install the project, you need to follow these steps:
 
 The following endpoints are available on the API:
 
-- `POST /api/`: Adding a new person.
+- `POST /api`: Adding a new person.
 - `GET /api/:id`: Fetching details of a person.
 - `DELETE /api/:id`: Removing a person.
 - `PUT /api/:id`: Modifying details of an existing person
